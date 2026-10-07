@@ -1,0 +1,43 @@
+<footer class="bg-surface-container-low border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-margin-desktop py-lg max-w-[1440px] mx-auto gap-12">
+    <div class="space-y-4 max-w-sm">
+      <div class="font-headline-md text-headline-md font-bold text-on-surface">Jenpharm Dermive</div>
+      <p class="text-on-surface-variant text-label-md">Professional grade skincare solutions backed by science and molecular research. Ethical, clean, and clinical.</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <h4 class="font-bold text-on-surface">Products</h4>
+        <ul class="space-y-2">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Moisturizers</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Sun Protection</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Serums</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h4 class="font-bold text-on-surface">Support</h4>
+        <ul class="space-y-2">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Contact Us</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Shipping Policy</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4 col-span-2 lg:col-span-1">
+        <h4 class="font-bold text-on-surface">Social</h4>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/30 py-8 px-margin-desktop text-center">
+    <p class="font-label-md text-label-md text-on-surface-variant opacity-70">© {{ 'now' | date: '%Y' }} Jenpharm Dermive. Clinical Grade Care.</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

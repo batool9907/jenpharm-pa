@@ -1,0 +1,42 @@
+<div class="container section">
+  <div class="product-page-wrapper">
+    <div class="modal-body-grid" style="background: #ffffff; border-radius: var(--radius-xl); box-shadow: var(--shadow-low);">
+      <div class="modal-img-col">
+        {%- if product.featured_image -%}
+          <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}">
+        {%- else -%}
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCexhfGPpW-Dd1ri6UlAVmRPO9nhcBLOMMsCBTaOU-mgunWP237Mh-UCsTtO0uHiC4TM92q7Z7UEzv5VIOZxbQOA4W4EO05Fs7uO5cxxRc742CPT3C_ptxM97Ytkiuly53WYxhPbatffmDOlbSy264rHujE_efN-FcaDZQ160raUjGJLyV8HE3m6CGgdOBWa87yeWUmCMBokf25pZByLZLV3R4I5i2JHLZbxeY3iAezs7fC3lG9WVt17-peZU9epi6RIg25FKTP4A" alt="Dermive Product">
+        {%- endif -%}
+      </div>
+      <div class="modal-info-col">
+        <span class="clinical-chip">Clinical Precision</span>
+        <h1 class="modal-product-title">{{ product.title }}</h1>
+        <div class="modal-price-row">
+          <span class="modal-product-price">{{ product.price | money }}</span>
+          {%- if product.compare_at_price > product.price -%}
+            <span class="original-price">{{ product.compare_at_price | money }}</span>
+          {%- endif -%}
+        </div>
+        <div class="product-desc-content" style="font-size: 0.95rem; color: var(--on-surface-variant); line-height: 1.6;">
+          {{ product.description }}
+        </div>
+        {%- form 'product', product -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <span class="material-symbols-outlined">shopping_bag</span>
+              <span>Add to Clinical Bag</span>
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

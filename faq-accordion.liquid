@@ -1,0 +1,105 @@
+<!-- FAQ ACCORDION SECTION -->
+<section class="section section-faq bg-surface-low" id="faq">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+      <p class="section-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+
+    <div class="faq-accordion-container">
+      <div class="faq-item">
+        <button class="faq-question-btn" aria-expanded="false">
+          <span>Is Dermive Oil Free Moisturizer suitable for acne-prone skin?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer-content">
+          <p>
+            Yes, absolutely. Dermive is 100% oil-free and non-comedogenic (pore clogging score of 0). It is specifically formulated for oily, combination, and acne-prone skin that needs lightweight hydration without suffocating follicles.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question-btn" aria-expanded="false">
+          <span>Can I use Dermive Oil Free Moisturizer SPF 20 at night?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer-content">
+          <p>
+            Dermive SPF 20 is optimized for daytime wear to shield skin against UV radiation. For nighttime barrier repair, we recommend our Dermive Hydrating Ceramide Cream which delivers overnight peptide and lipid recovery without SPF filters.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question-btn" aria-expanded="false">
+          <span>Does it leave a white cast on darker skin tones?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer-content">
+          <p>
+            No. Our advanced micronized formulation absorbs completely clear within 30 seconds of application, leaving a soft matte finish with zero white residue or stickiness.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question-btn" aria-expanded="false">
+          <span>What are the 3 essential ceramides in the formula?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer-content">
+          <p>
+            Dermive incorporates Ceramides 1 (EOP), 3 (NP), and 6-II (AP) in a biomimetic ratio identical to natural healthy human skin lipids. They replenish the stratum corneum barrier and lock in moisture.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question-btn" aria-expanded="false">
+          <span>How long does delivery take in Pakistan?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer-content">
+          <p>
+            Orders are dispatched within 24 hours. Delivery takes 2 to 3 business days across Karachi, Lahore, Islamabad, and all major cities in Pakistan. Cash on Delivery (COD) and Online Bank/Card payments are accepted.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Clinical Skincare Guidance"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Have questions about ingredients, usage protocols, or shipping? Here are expert answers from our dermatological team."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}

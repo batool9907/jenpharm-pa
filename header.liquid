@@ -1,0 +1,29 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-sm">
+  <nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-[1440px] mx-auto">
+    <div class="font-headline-md text-headline-md font-bold text-on-surface">Jenpharm Dermive</div>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md" href="{{ routes.root_url }}">Shop All</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#technology">SPF Range</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#technology">Ceramides</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#clinical-stats">Hydration</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#reviews">About</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="relative hidden lg:block">
+        <input class="bg-surface-container border-none rounded-full px-6 py-2 w-64 text-label-md focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search products..." type="text"/>
+        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="{{ routes.cart_url }}" class="p-2 text-primary hover:bg-surface-container transition-all rounded-full"><span class="material-symbols-outlined">shopping_cart</span></a>
+        <a href="{{ routes.account_url }}" class="p-2 text-primary hover:bg-surface-container transition-all rounded-full"><span class="material-symbols-outlined">person</span></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

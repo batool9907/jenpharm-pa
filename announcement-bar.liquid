@@ -1,0 +1,48 @@
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="announcement-bar" id="announcement-bar">
+  <div class="container announcement-content">
+    <div class="announcement-item">
+      <span class="material-symbols-outlined icon-sm">local_shipping</span>
+      <span>{{ section.settings.shipping_text }}</span>
+    </div>
+    <div class="announcement-item hide-mobile">
+      <span class="material-symbols-outlined icon-sm">verified_user</span>
+      <span>{{ section.settings.badge_text }}</span>
+    </div>
+    <div class="announcement-item hide-tablet">
+      <span class="material-symbols-outlined icon-sm">support_agent</span>
+      <span>{{ section.settings.consult_text }}</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping Message",
+      "default": "Free Express Clinical Delivery on Orders Over Rs. 2,000"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Formulation Tag",
+      "default": "100% Dermatologist Formulated & Tested"
+    },
+    {
+      "type": "text",
+      "id": "consult_text",
+      "label": "Consultation Info",
+      "default": "Free Skin Consultation: 0800-DERMIVE"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

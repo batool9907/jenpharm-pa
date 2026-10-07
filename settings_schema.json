@@ -1,0 +1,50 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Jenpharm Dermive Clinical Precision",
+    "theme_author": "Antigravity",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://jenpharm.com",
+    "theme_support_url": "https://jenpharm.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Brand Color",
+        "default": "#006689"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_container",
+        "label": "Primary Container / Action Color",
+        "default": "#35b0e4"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background Color",
+        "default": "#f6fafe"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Main Text Color",
+        "default": "#171c1f"
+      }
+    ]
+  },
+  {
+    "name": "Free Shipping Bar",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free Shipping Minimum (Rs.)",
+        "default": 2000
+      }
+    ]
+  }
+]

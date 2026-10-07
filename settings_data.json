@@ -1,0 +1,18 @@
+{
+  "current": {
+    "color_primary": "#006689",
+    "color_primary_container": "#35b0e4",
+    "color_background": "#f6fafe",
+    "color_text": "#171c1f",
+    "free_shipping_threshold": 2000
+  },
+  "presets": {
+    "Default": {
+      "color_primary": "#006689",
+      "color_primary_container": "#35b0e4",
+      "color_background": "#f6fafe",
+      "color_text": "#171c1f",
+      "free_shipping_threshold": 2000
+    }
+  }
+}

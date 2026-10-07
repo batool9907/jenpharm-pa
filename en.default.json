@@ -1,0 +1,31 @@
+{
+  "general": {
+    "search": {
+      "search": "Search clinical formulas...",
+      "no_results": "No clinical formulas found"
+    },
+    "cart": {
+      "title": "Clinical Bag",
+      "empty": "Your Clinical Bag is Empty",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "checkout": "Proceed to Secure Checkout",
+      "view_cart": "View Bag"
+    },
+    "newsletter": {
+      "title": "Join the Clinical Care Circle",
+      "button_label": "Claim 15% Off",
+      "success": "Welcome! Use promo code CLINICAL15 for 15% off."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Bag",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "quick_view": "Quick View",
+      "regular_price": "Regular price",
+      "sale_price": "Sale price"
+    }
+  }
+}

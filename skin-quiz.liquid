@@ -1,0 +1,152 @@
+<!-- INTERACTIVE SKIN ROUTINE BUILDER / QUIZ -->
+<section class="section section-quiz bg-surface-low" id="routine-builder">
+  <div class="container">
+    <div class="quiz-wrapper">
+      <div class="quiz-intro">
+        <span class="clinical-chip">
+          <span class="material-symbols-outlined">psychology</span>
+          <span>{{ section.settings.badge_text }}</span>
+        </span>
+        <h2 class="section-title text-left">{{ section.settings.title }}</h2>
+        <p class="section-subtitle text-left">
+          {{ section.settings.subtitle }}
+        </p>
+      </div>
+
+      <div class="quiz-card" id="quiz-container">
+        <!-- Step Indicator -->
+        <div class="quiz-step-indicator">
+          <div class="quiz-step active" id="step-dot-1"><span>1</span> Skin Type</div>
+          <div class="quiz-step-line"></div>
+          <div class="quiz-step" id="step-dot-2"><span>2</span> Main Concern</div>
+          <div class="quiz-step-line"></div>
+          <div class="quiz-step" id="step-dot-3"><span>3</span> Routine Goal</div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="quiz-step-content active" id="quiz-step-1">
+          <h3 class="quiz-question">1. How does your skin feel midday?</h3>
+          <div class="quiz-options-grid">
+            <button class="quiz-option-btn" data-type="skin" data-value="oily">
+              <span class="material-symbols-outlined">wb_twilight</span>
+              <strong>Oily & Shiny</strong>
+              <small>Excess sebum across T-zone and cheeks</small>
+            </button>
+            <button class="quiz-option-btn" data-type="skin" data-value="dry">
+              <span class="material-symbols-outlined">grain</span>
+              <strong>Dry & Tight</strong>
+              <small>Flaking, tightness, or rough patches</small>
+            </button>
+            <button class="quiz-option-btn" data-type="skin" data-value="combination">
+              <span class="material-symbols-outlined">balance</span>
+              <strong>Combination</strong>
+              <small>Oily T-zone but normal/dry cheeks</small>
+            </button>
+            <button class="quiz-option-btn" data-type="skin" data-value="sensitive">
+              <span class="material-symbols-outlined">sentiment_sensitive</span>
+              <strong>Sensitive & Red</strong>
+              <small>Stings easily, reactive to formulas</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="quiz-step-content" id="quiz-step-2">
+          <h3 class="quiz-question">2. What is your primary skin concern?</h3>
+          <div class="quiz-options-grid">
+            <button class="quiz-option-btn" data-type="concern" data-value="acne">
+              <span class="material-symbols-outlined">blur_on</span>
+              <strong>Acne & Breakouts</strong>
+              <small>Clogged pores, active blemishes, blackheads</small>
+            </button>
+            <button class="quiz-option-btn" data-type="concern" data-value="dehydration">
+              <span class="material-symbols-outlined">water_drop</span>
+              <strong>Dehydration & Barrier</strong>
+              <small>Dullness, fine lines, peeling skin</small>
+            </button>
+            <button class="quiz-option-btn" data-type="concern" data-value="sun_damage">
+              <span class="material-symbols-outlined">wb_sunny</span>
+              <strong>Sun Protection & Spots</strong>
+              <small>Hyperpigmentation, uneven skin tone</small>
+            </button>
+            <button class="quiz-option-btn" data-type="concern" data-value="redness">
+              <span class="material-symbols-outlined">healing</span>
+              <strong>Irritation & Redness</strong>
+              <small>Rosacea, compromised moisture barrier</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="quiz-step-content" id="quiz-step-3">
+          <h3 class="quiz-question">3. What is your primary daily skincare goal?</h3>
+          <div class="quiz-options-grid">
+            <button class="quiz-option-btn" data-type="goal" data-value="oil_control">
+              <span class="material-symbols-outlined">cleaning_services</span>
+              <strong>Matte Finish & Pore Minimizing</strong>
+              <small>Zero shine throughout 12+ hours</small>
+            </button>
+            <button class="quiz-option-btn" data-type="goal" data-value="barrier_repair">
+              <span class="material-symbols-outlined">health_and_safety</span>
+              <strong>Deep Barrier Restoration</strong>
+              <small>Soothe skin & strengthen natural lipids</small>
+            </button>
+            <button class="quiz-option-btn" data-type="goal" data-value="daily_spf">
+              <span class="material-symbols-outlined">shield</span>
+              <strong>Effortless Daily UV Defense</strong>
+              <small>Moisturizer + Sunscreen 2-in-1 ease</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result View -->
+        <div class="quiz-step-content" id="quiz-result-view" style="display: none;">
+          <div class="quiz-result-header">
+            <span class="material-symbols-outlined text-primary" style="font-size: 48px;">recommend</span>
+            <h3>Your Recommended Clinical Protocol</h3>
+            <p id="quiz-result-summary">Customized based on your skin profile.</p>
+          </div>
+          <div class="quiz-recommendations-list" id="quiz-recommendations-list"></div>
+          <div class="quiz-result-actions">
+            <button class="btn btn-primary" id="add-routine-bundle-btn">
+              <span class="material-symbols-outlined">add_shopping_cart</span>
+              <span>Add Complete Regimen to Cart (Save 15%)</span>
+            </button>
+            <button class="btn btn-secondary" id="restart-quiz-btn">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Skin Diagnostic Quiz",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Interactive Diagnostic"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Find Your Custom Clinical Regimen"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Answer 3 quick questions about your skin biology to receive a personalized dermatologist-formulated Dermive routine."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin Diagnostic Quiz"
+    }
+  ]
+}
+{% endschema %}

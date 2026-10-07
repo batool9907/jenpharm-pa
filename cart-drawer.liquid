@@ -1,0 +1,69 @@
+<!-- SLIDE-OVER SHOPPING CART DRAWER -->
+<div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <div class="cart-title-row">
+      <span class="material-symbols-outlined text-primary">shopping_bag</span>
+      <h3 class="cart-drawer-title">Clinical Bag</h3>
+      <span class="cart-count-pill" id="cart-drawer-count">{{ cart.item_count }} items</span>
+    </div>
+    <button class="close-drawer-btn" id="close-cart-btn" aria-label="Close Cart">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <!-- Free Shipping Progress Bar -->
+  <div class="free-shipping-meter">
+    <div class="meter-text" id="shipping-meter-text">
+      Add <strong>Rs. 2,000</strong> more to unlock <strong>FREE Express Shipping!</strong>
+    </div>
+    <div class="meter-bar-track">
+      <div class="meter-bar-fill" id="shipping-meter-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Cart Items List -->
+  <div class="cart-items-list" id="cart-items-list">
+    <!-- Empty State -->
+    <div class="empty-cart-state" id="empty-cart-view">
+      <span class="material-symbols-outlined empty-cart-icon">shopping_cart_off</span>
+      <h4>Your Clinical Bag is Empty</h4>
+      <p>Select science-backed products from our range to start your journey to healthier skin.</p>
+      <a href="#shop" class="btn btn-primary btn-sm" id="empty-cart-shop-btn">Explore Formulas</a>
+    </div>
+  </div>
+
+  <!-- Cart Footer / Summary -->
+  <div class="cart-drawer-footer" id="cart-drawer-footer">
+    <div class="promo-code-box">
+      <input type="text" id="promo-code-input" placeholder="Promo code (e.g. CLINICAL15)">
+      <button class="btn btn-secondary btn-sm" id="apply-promo-btn">Apply</button>
+    </div>
+    <div class="cart-summary-breakdown">
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <strong id="cart-subtotal">Rs. 0</strong>
+      </div>
+      <div class="summary-row discount-row" id="discount-row" style="display: none;">
+        <span>Clinical Discount (15%):</span>
+        <strong class="text-success" id="cart-discount">-Rs. 0</strong>
+      </div>
+      <div class="summary-row">
+        <span>Estimated Shipping:</span>
+        <strong id="cart-shipping">Rs. 200</strong>
+      </div>
+      <div class="summary-row grand-total">
+        <span>Total Amount:</span>
+        <strong id="cart-total">Rs. 0</strong>
+      </div>
+    </div>
+    <a href="/checkout" class="btn btn-primary btn-block btn-lg" id="checkout-btn">
+      <span>Proceed to Secure Checkout</span>
+      <span class="material-symbols-outlined">lock</span>
+    </a>
+    <p class="secure-checkout-tag">
+      <span class="material-symbols-outlined icon-sm">lock</span>
+      256-Bit SSL Encrypted & Cash on Delivery Available
+    </p>
+  </div>
+</aside>

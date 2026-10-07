@@ -1,0 +1,68 @@
+<!-- PRODUCT CATALOG / SHOP SECTION -->
+<section class="section section-shop bg-white" id="shop">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+      <p class="section-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tab-bar" id="product-filters">
+        <button class="filter-tab active" data-filter="all">All Products</button>
+        <button class="filter-tab" data-filter="moisturizer">Moisturizers</button>
+        <button class="filter-tab" data-filter="spf">SPF & Sun Defense</button>
+        <button class="filter-tab" data-filter="cleanser">Cleansers</button>
+        <button class="filter-tab" data-filter="serum">Active Serums</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid">
+      {%- if section.settings.collection != blank and section.settings.collection.products_count > 0 -%}
+        {%- for product in section.settings.collection.products limit: 6 -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Default Clinical Formulas Grid (Auto-populated via app.js and rendered for instant preview) -->
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Pharmaceutical Range"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "The Dermive Skincare Line"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Clinically targeted formulas designed to work synergistically for maximum dermatological efficacy."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Shopify Collection (Optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products Grid"
+    }
+  ]
+}
+{% endschema %}

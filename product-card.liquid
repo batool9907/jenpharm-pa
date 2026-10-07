@@ -1,0 +1,47 @@
+{%- comment -%}
+  Product Card Snippet for Shopify
+{%- endcomment -%}
+<div class="product-card">
+  <span class="product-badge-tag">Clinical Pick</span>
+  <button class="product-wishlist-btn" data-id="{{ product.id }}" title="Wishlist" aria-label="Add to Wishlist">
+    <span class="material-symbols-outlined">favorite</span>
+  </button>
+  <div class="product-image-container">
+    {%- if product.featured_image -%}
+      <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title | escape }}" class="product-img" loading="lazy">
+    {%- else -%}
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCexhfGPpW-Dd1ri6UlAVmRPO9nhcBLOMMsCBTaOU-mgunWP237Mh-UCsTtO0uHiC4TM92q7Z7UEzv5VIOZxbQOA4W4EO05Fs7uO5cxxRc742CPT3C_ptxM97Ytkiuly53WYxhPbatffmDOlbSy264rHujE_efN-FcaDZQ160raUjGJLyV8HE3m6CGgdOBWa87yeWUmCMBokf25pZByLZLV3R4I5i2JHLZbxeY3iAezs7fC3lG9WVt17-peZU9epi6RIg25FKTP4A" alt="{{ product.title }}" class="product-img" loading="lazy">
+    {%- endif -%}
+    <a href="{{ product.url }}" class="quick-view-overlay-btn">
+      <span class="material-symbols-outlined">visibility</span>
+      <span>Quick View</span>
+    </a>
+  </div>
+  <div class="product-info">
+    <div class="product-chips">
+      <span class="chip-tag">Derm Tested</span>
+      <span class="chip-tag">Oil-Free</span>
+    </div>
+    <h3 class="product-card-title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    <p class="product-card-desc">{{ product.description | strip_html | truncate: 90 }}</p>
+    <div class="product-rating-row">
+      <span class="product-stars">★★★★★</span>
+      <span class="rating-count">4.9 (1,200+)</span>
+    </div>
+    <div class="product-bottom-row">
+      <div class="price-box">
+        <span class="current-price">{{ product.price | money }}</span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="original-price">{{ product.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+      {%- form 'product', product -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="add-cart-btn">
+          <span class="material-symbols-outlined">add_shopping_cart</span>
+          <span>Add</span>
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
